@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çizgi Roman Evreninin En Büyük Kötüleri</title>
+    <style>
+        :root {
+            --bg-primary: #0a0c10;
+            --bg-secondary: #141822;
+            --bg-card: #1c2230;
+            --text-main: #e6e8ee;
+            --text-muted: #9aa5ce;
+            --accent-purple: #9d7cd8;
+            --accent-red: #f7768e;
+            --accent-gold: #e0af68;
+            --border-color: #2b3348;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
+            border-radius: 12px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, var(--accent-red), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .intro-box {
+            background-color: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
+            margin-bottom: 40px;
+        }
+
+        .intro-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-gold);
+        }
+
+        .villain-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            margin-bottom: 40px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .villain-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .villain-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .villain-title {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .thanos-title { color: var(--accent-purple); }
+        .darkseid-title { color: var(--accent-red); }
+        .doom-title { color: var(--accent-gold); }
+
+        .universe-badge {
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            background-color: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            font-size: 0.95rem;
+        }
+
+        .info-item span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+            color: var(--text-main);
+        }
+
+        .villain-content p {
+            margin-bottom: 15px;
+            color: #c0caf5;
+            text-align: justify;
+        }
+
+        .quote-box {
+            font-style: italic;
+            padding: 15px 20px;
+            background-color: var(--bg-secondary);
+            border-left: 3px solid var(--text-muted);
+            margin: 20px 0;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .villain-card { padding: 20px; }
+            .villain-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mutlak Güç ve Yıkım Arquetipleri</h1>
+        <p>Çizgi roman evrenlerinin akıl sınırlarını zorlayan, felsefeleri ve hedefleriyle evrenleri tehdit eden en büyük antagonistlerinin analizi.</p>
+    </header>
+
+    <div class="container">
+
+        <section class="intro-box">
+            <h2>Kötülüğün Felsefesi</h2>
+            <p>Çizgi roman dünyasındaki büyük antagonistler sadece "kötü olmak" için var olmazlar. Her biri kendince rasyonel gerekçelere, kozmik doktrinlere veya sarsılmaz bir ego felsefesine dayanır. Bu belgede, çizgi roman tarihinin en etki bırakan üç devasa figürünün kimliklerini inceleyeceğiz.</p>
+        </section>
+
+        <!-- THANOS -->
+        <article class="villain-card">
+            <div class="villain-header">
+                <h2 class="villain-title thanos-title">Thanos</h2>
+                <span class="universe-badge">Marvel Evreni</span>
+            </div>
+
+            <div class="grid-info">
+                <div class="info-item">
+                    <span>İlk Görünüm</span>
+                    Iron Man #55 (1973)
+                </div>
+                <div class="info-item">
+                    <span>Yaratıcılar</span>
+                    Jim Starlin
+                </div>
+                <div class="info-item">
+                    <span>Köken</span>
+                    Titan (Satürn'ün Uydusu)
+                </div>
+                <div class="info-item">
+                    <span>Ana Unvan</span>
+                    Çılgın Titan (The Mad Titan)
+                </div>
+            </div>
+
+            <div class="villain-content">
+                <h3 class="section-subtitle">Kimdir?</h3>
+                <p>Thanos, Eternal (Ebedi) ırkının bir üyesi olarak Titan'da dünyaya gelmiştir. Deviant geniyle doğduğu için soydaşlarından farklı olarak mor renkte bir cilde ve muazzam bir fiziki yapıya sahiptir. Çizgi romanlarda yalnızlık ve yabancılaşma içinde büyüyen Thanos, zamanla ölüm fikrine takıntılı hale gelmiş ve doğrudan Ölüm'ün kişileşmiş formu olan Mistress Death'e aşık olmuştur.</p>
+
+                <h3 class="section-subtitle">Motivasyon ve Felsefe</h3>
+                <p>Thanos'un ana motivasyonu evrensel bir denge kurmak veya aşık olduğu Ölüm'e sadakatini kanıtlamaktır. Sinematik evrende evrensel kaynakların yetersizliği nedeniyle canlı nüfusunun yarısını yok etmeyi ulvi bir görev olarak görse de, çizgi romanlarda bu eylemi tamamen Ölüm'ü etkilemek için gerçekleştirir. Sonsuzluk Taşları'nı (Infinity Stones) toplayarak evrenin gerçekliğini tek bir parmak şıklatmasıyla değiştirecek güce erişmiştir.</p>
+
+                <div class="quote-box">
+                    "Kendi başarısızlığınızla yaşayamadınız. Ve bu sizi nereye getirdi? Yeniden bana."
+                </div>
+
+                <h3 class="section-subtitle">Güçleri ve Yetenekleri</h3>
+                <p>Taşlar olmadan dahi Thanos; muazzam bir fiziksel güce, kırılmaz bir iradeye, üstün zekaya ve kozmik enerji manipülasyonu yeteneğine sahiptir. Sadece kas gücüyle değil, aynı zamanda stratejik zekası ve bilimsel dehasıyla da evrendeki en tehlikeli varlıklardan biridir.</p>
+            </div>
+        </article>
+
+        <!-- DARKSEID -->
+        <article class="villain-card">
+            <div class="villain-header">
+                <h2 class="villain-title darkseid-title">Darkseid</h2>
+                <span class="universe-badge">DC Evreni</span>
+            </div>
+
+            <div class="grid-info">
+                <div class="info-item">
+                    <span>İlk Görünüm</span>
+                    Superman's Pal Jimmy Olsen #134 (1970)
+                </div>
+                <div class="info-item">
+                    <span>Yaratıcılar</span>
+                    Jack Kirby
+                </div>
+                <div class="info-item">
+                    <span>Köken</span>
+                    Apokolips
+                </div>
+                <div class="info-item">
+                    <span>Ana Unvan</span>
+                    Apokolips'in Mutlak Hükümdarı
+                </div>
+            </div>
+
+            <div class="villain-content">
+                <h3 class="section-subtitle">Kimdir?</h3>
+                <p>Darkseid, DC Evrenindeki "Yeni Tanrılar" (New Gods) soyundan gelen, Apokolips adı verilen cehennemi gezegenin tiran hükümdarıdır. Gerçek adı Uxas olan bu kozmik varlık, Yeni Tanrılar gücünü elde ettikten sonra Darkseid adını almıştır. O, sıradan bir fatih veya süper kötü değil; kötülüğün, tiranlığın ve boyun eğdirmenin kozmik bir sembolüdür.</p>
+
+                <h3 class="section-subtitle">Motivasyon ve Felsefe</h3>
+                <p>Darkseid'ın nihai amacı, tüm özgür iradeyi ortadan kaldırmaktır. Bunun için evren genelinde "Yaşam Karşıtı Denklem" (Anti-Life Equation) adı verilen matematiksel ve felsefi bir formülü aramaktadır. Bu denklem zihne eklendiğinde, yaşayan her canlının özgür iradesini yok eder ve onları tamamen Darkseid'ın iradesine köle kılar. Darkseid için zafer, sadece toprak fethetmek değil, varoluşun kendisini kendi zihnine tabi kılmaktır.</p>
+
+                <div class="quote-box">
+                    "Ben Darkseid'ım. Var olan her şeyin üzerindeki mutlak tiranım."
+                </div>
+
+                <h3 class="section-subtitle">Güçleri ve Yetenekleri</h3>
+                <p>Darkseid, gözlerinden çıkan ve hedefini ne olursa olsun takip eden, moleküler düzeyde yok edebilen veya ışınlayabilen "Omega Işınları" (Omega Beams) ile tanınır. Ölümsüzdür, sınırsız fiziksel güce sahiptir ve zihinsel manipülasyon konusunda rakipsizdir.</p>
+            </div>
+        </article>
+
+        <!-- DOCTOR DOOM -->
+        <article class="villain-card">
+            <div class="villain-header">
+                <h2 class="villain-title doom-title">Doctor Doom (Victor von Doom)</h2>
+                <span class="universe-badge">Marvel Evreni</span>
+            </div>
+
+            <div class="grid-info">
+                <div class="info-item">
+                    <span>İlk Görünüm</span>
+                    The Fantastic Four #5 (1962)
+                </div>
+                <div class="info-item">
+                    <span>Yaratıcılar</span>
+                    Stan Lee & Jack Kirby
+                </div>
+                <div class="info-item">
+                    <span>Köken</span>
+                    Latveria
+                </div>
+                <div class="info-item">
+                    <span>Ana Unvan</span>
+                    Latveria Devlet Başkanı / Yüce Büyücü
+                </div>
+            </div>
+
+            <div class="villain-content">
+                <h3 class="section-subtitle">Kimdir?</h3>
+                <p>Victor von Doom, hayali bir Doğu Avrupa ülkesi olan Latveria'nın mutlak hükümdarıdır. Yoksul bir Roman ailesinden gelen Victor, hem bilimsel dehasını hem de annesinden miras kalan mistik büyü yeteneklerini birleştirerek dünyanın en güçlü insanlarından biri haline gelmiştir. Yüzündeki trajik bir patlama izi nedeniyle sürekli metal bir maske ve zırh giyer.</p>
+
+                <h3 class="section-subtitle">Motivasyon ve Felsefe</h3>
+                <p>Doctor Doom'u diğer kötülerden ayıran en önemli unsur, kendi eylemlerinin nihai olarak insanlığın iyiliği için olduğuna samimiyetle inanmasıdır. Birçok hikayede (özellikle Secret Wars gibi kozmik olaylarda), geleceğe baktığında insanlığın hayatta kalabildiği tek senaryonun kendi yönetimi altında olduğu senaryo olduğunu görmüştür. Katı bir gurura sahiptir; Reed Richards (Mr. Fantastic) ile olan ezeli rekabeti kişisel takıntılarının başında gelir.</p>
+
+                <div class="quote-box">
+                    "Doom kimseden emir almaz. Doom kimseye boyun eğmez. Doom eşsizdir."
+                </div>
+
+                <h3 class="section-subtitle">Güçleri ve Yetenekleri</h3>
+                <p>Doom, herhangi bir doğaüstü mutasyona sahip değildir. Gücü; Marvel evreninin en yüksek zekalarından birine sahip olmasından, geliştirdiği teknolojik zırhtan ve Doctor Strange ile yarışabilecek düzeydeki büyücülük yeteneğinden gelir. Teknoloji ile büyüyü birleştirebilen nadir dehalardandır.</p>
+            </div>
+        </article>
+
+        <!-- KARŞILAŞTIRMA ÖZETİ -->
+<section class="intro-box" style="border-left-color: var(--accent-purple);">
+    <h2>Karakterlerin Karşılaştırmalı Özeti</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+        <thead>
+            <tr style="border-bottom: 2px solid var(--accent-purple); text-align: left;">
+                <th style="padding: 10px;">Karakter</th>
+                <th style="padding: 10px;">Temel Özellik / Motivasyon</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <td style="padding: 10px;"><strong>Thanos</strong></td>
+                <td style="padding: 10px;">Denge ve Ölüm takıntılı kozmik bir tehdit.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <td style="padding: 10px;"><strong>Darkseid</strong></td>
+                <td style="padding: 10px;">Özgür iradeyi yok etmeye adanmış tanrısal bir tiran.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;"><strong>Doctor Doom</strong></td>
+                <td style="padding: 10px;">Mutlak kontrolle evreni kurtarabileceğine inanan insan dehası.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    </div>
+
+    <footer>
+        <p>Çizgi Roman İkonografi ve Antagonist Analiz Belgesi &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
